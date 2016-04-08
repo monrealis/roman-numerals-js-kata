@@ -20,7 +20,9 @@ describe('Roman Numerals Converter', () => {
     [400, 'CD'],
     [500, 'D'],
     [900, 'CM'],
-    [1000, 'M']
+    [1000, 'M'],
+    [0, ''],
+    [2456, 'MMCDLVI']
   ];
   
   tests.forEach(test => {
@@ -36,18 +38,35 @@ describe('Roman Numerals Converter', () => {
 
 });
 
-const RULES = {
-  M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 
-};
-
 function toRoman(number) {
+
+  const RULES = [ 
+    ['M', 1000], 
+    ['CM', 900], 
+    ['D', 500], 
+    ['CD', 400], 
+    ['C', 100], 
+    ['XC', 90], 
+    ['L', 50], 
+    ['XL', 40], 
+    ['X', 10], 
+    ['IX', 9], 
+    ['V', 5], 
+    ['IV', 4], 
+    ['I', 1] 
+  ];
+
   function applyRule(roman, arabic) {
     const times = Math.floor(number / arabic);
     number -= arabic * times; 
     return roman.repeat(times);
   }
 
-  return Object.keys(RULES).map(roman => applyRule(roman, RULES[roman])).join('');
+  return RULES.map(rule => {
+    const roman = rule[0];
+    const arabic = rule[1];
+    return applyRule(roman, arabic)
+  }).join('');
 }
 
 
