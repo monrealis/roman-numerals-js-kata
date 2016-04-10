@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Roman Numerals JavaScript Kata",
   "scripts": {
-    "test": "mocha",
-    "testing": "mocha --watch"
+    "test": "jasmine-node --matchall test",
+    "testing": "jasmine-node --autotest --matchall test"
   },
   "author": "Vaidas Pilkauskas",
   "dependencies": {
