@@ -1,8 +1,8 @@
-const assert = require('assert');
-const expect = require('chai').expect
+var assert = require('assert');
+var expect = require('chai').expect
 
-describe('Example Test', () => {
-  it('simple test', () => {
-    expect(1).to.equal(1);
-  });
+describe('Example Test', function() {
+	it('simple test', function() {
+		expect(1).to.equal(1);
+	});
 });
