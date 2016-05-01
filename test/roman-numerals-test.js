@@ -29,7 +29,7 @@ describe('Roman Numerals Converter',  function() {
     var arabic = test[0];
     var roman = test[1];
 
-    it("converts ${arabic} to ${roman}", function() {
+    it("converts " + arabic + " to " + roman, function() {
       expect(toRoman(arabic)).to.equal(roman);
     });
  
