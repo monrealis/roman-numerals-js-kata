@@ -1,5 +1,5 @@
 'use strict'
-const expect = require('chai').expect;
+const chai = require('chai');
 
 describe('Roman Numerals Converter', () => {
   const tests = [
@@ -30,7 +30,7 @@ describe('Roman Numerals Converter', () => {
     const roman = test[1];
 
     it(`converts ${arabic} to ${roman}`, () => {
-      expect(toRoman(arabic)).to.equal(roman);
+      chai.expect(toRoman(arabic)).to.equal(roman);
     });
  
 
