@@ -1,5 +1,8 @@
 'use strict'
-const chai = require('chai');
+var chai;
+if (typeof exports !== 'undefined') {
+	chai = require('chai');
+}
 
 describe('Roman Numerals Converter', () => {
   const tests = [
@@ -31,6 +34,7 @@ describe('Roman Numerals Converter', () => {
 
     it(`converts ${arabic} to ${roman}`, () => {
       chai.expect(toRoman(arabic)).to.equal(roman);
+	  expect(true).toBe(true);
     });
  
 
