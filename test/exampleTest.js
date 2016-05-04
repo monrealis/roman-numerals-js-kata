@@ -1,7 +1,10 @@
-const expect = require('chai').expect
+var chai;
+if (typeof exports !== 'undefined') {
+	chai = require('chai');
+}
 
 describe('Example Test', () => {
   it('simple test', () => {
-    expect(1).to.equal(1);
+    chai.expect(1).to.equal(1);
   });
 });
