@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Roman Numerals JavaScript Kata",
   "scripts": {
-    "test": "tape test"
+    "test": "tape test/* | faucet"
   },
   "author": "Vaidas Pilkauskas",
   "devDependencies": {
+    "faucet": "0.0.1",
+    "tap-prettify": "0.0.2",
     "tape": "^4.5.1"
   }
 }
