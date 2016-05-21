@@ -4,7 +4,8 @@
   "description": "Roman Numerals JavaScript Kata",
   "scripts": {
     "test": "jasmine-node --matchall test",
-    "testing": "jasmine-node --autotest --matchall test"
+    "testing": "jasmine-node --autotest --matchall test",
+    "cover": "istanbul cover --no-default-excludes -x \"**/node_modules/**\" jasmine"
   },
   "author": "Vaidas Pilkauskas",
   "dependencies": {
