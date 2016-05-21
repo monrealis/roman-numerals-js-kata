@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "Roman Numerals JavaScript Kata",
   "scripts": {
-    "test": "mocha",
-    "testing": "mocha --watch"
+    "test": "tape test"
   },
   "author": "Vaidas Pilkauskas",
-  "dependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+  "devDependencies": {
+    "tape": "^4.5.1"
   }
 }

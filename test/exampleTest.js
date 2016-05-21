@@ -1,8 +1,6 @@
-var assert = require('assert');
-var expect = require('chai').expect
+var test = require('tape');
 
-describe('Example Test', function() {
-	it('simple test', function() {
-		expect(1).to.equal(1);
-	});
+test('Example Test', function(t) {
+	t.equal(1, 1);
+	t.end();
 });

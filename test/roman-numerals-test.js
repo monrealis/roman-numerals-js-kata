@@ -1,7 +1,7 @@
 'use strict'
-var expect = require('chai').expect;
+var test = require('tape');
 
-describe('Roman Numerals Converter',  function() {
+test('Roman Numerals Converter',  function(t) {
   var tests = [
     [1, 'I'],
     [2, 'II'],
@@ -29,8 +29,9 @@ describe('Roman Numerals Converter',  function() {
     var arabic = test[0];
     var roman = test[1];
 
-    it("converts " + arabic + " to " + roman, function() {
-      expect(toRoman(arabic)).to.equal(roman);
+    t.test(function(t2) {
+    	t2.plan(1);
+    	t2.equal(toRoman(arabic), roman)
     });
  
 
