@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Roman Numerals JavaScript Kata",
   "scripts": {
-    "test": "tape test/* | faucet"
+    "test": "tape test/* | tap-prettify -"
   },
   "author": "Vaidas Pilkauskas",
   "devDependencies": {
