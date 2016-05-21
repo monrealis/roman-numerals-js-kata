@@ -1,0 +1,19 @@
+{
+  "name": "roman-numerals-js-kata",
+  "description": "Roman Numerals JavaScript Kata",
+  "main": "",
+  "authors": [],
+  "license": "-",
+  "homepage": ".",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4"
+  }
+}
