@@ -1,4 +1,10 @@
 var page = require('webpage').create();
+
+page.onConsoleMessage = function(msg, lineNum, sourceId) {
+	console.log('CONSOLE: ' + msg + ' (from line #' + lineNum + ' in "'
+			+ sourceId + '")');
+};
+
 page.open('mocha.html', function(status) {
 	console.log("Status: " + status);
 	if (status === "success") {
