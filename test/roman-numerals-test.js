@@ -35,6 +35,7 @@ describe('Roman Numerals Converter',  function() {
 
     it("converts " + arabic + " to " + roman, function() {
       expect(toRoman(arabic)).to.equal(roman);
+      sleepFor(100)
     });
  
 
@@ -78,4 +79,10 @@ function toRoman(number) {
     var arabic = rule[1];
     return applyRule(roman, arabic)
   }).join('');
+}
+
+function sleepFor(sleepDuration) {
+	var now = new Date().getTime();
+	while (new Date().getTime() < now + sleepDuration)
+		;
 }
