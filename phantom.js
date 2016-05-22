@@ -14,7 +14,12 @@ page.open('mocha.html', function(status) {
 	}
 });
 
-var checkIfFinished = function() {
+function checkIfFinished() {
+	logProgress();
+	finishIfTestsEnded();
+}
+
+function logProgress() {
 	var title = page.evaluate(function() {
 		return document.title;
 	});
@@ -24,19 +29,25 @@ var checkIfFinished = function() {
 	var failed = page.evaluate(function() {
 		return document.querySelector('.failures').innerText;
 	});
+	console.log(passed + ' / ' + failed);
+}
+
+function finishIfTestsEnded() {
 	var finished = page.evaluate(function() {
 		return mochaRunner.stats.tests == mochaRunner.total;
 	});
-	var failedFromStats = page.evaluate(function() {
+	var numberOfFailed = page.evaluate(function() {
 		return mochaRunner.stats.failures;
 	});
-	console.log(passed + ' / ' + failed);
 	if (finished) {
-		console.log(failedFromStats);
-		page.evaluate(function() {
-			document.body.bgColor = 'white';
-		});
-		page.render('mocha.png');
-		phantom.exit(failedFromStats);
+		saveImage();
+		phantom.exit(numberOfFailed);
 	}
+}
+
+function saveImage() {
+	page.evaluate(function() {
+		document.body.bgColor = 'white';
+	});
+	page.render('mocha.png');
 }
