@@ -3,10 +3,10 @@ var chai;
 if (typeof exports !== 'undefined') {
 	chai = require('chai');
 }
-const expect = chai.expect
+var expect = chai.expect
 
-describe('Roman Numerals Converter', () => {
-  const tests = [
+describe('Roman Numerals Converter',  function() {
+  var tests = [
     [1, 'I'],
     [2, 'II'],
     [3, 'III'],
@@ -29,11 +29,11 @@ describe('Roman Numerals Converter', () => {
     [2456, 'MMCDLVI']
   ];
   
-  tests.forEach(test => {
-    const arabic = test[0];
-    const roman = test[1];
+  tests.forEach(function(test) {
+    var arabic = test[0];
+    var roman = test[1];
 
-    it(`converts ${arabic} to ${roman}`, () => {
+    it("converts " + arabic + " to " + roman, function() {
       expect(toRoman(arabic)).to.equal(roman);
     });
  
@@ -44,7 +44,7 @@ describe('Roman Numerals Converter', () => {
 
 function toRoman(number) {
 
-  const RULES = [ 
+  var RULES = [ 
     ['M', 1000], 
     ['CM', 900], 
     ['D', 500], 
@@ -61,16 +61,21 @@ function toRoman(number) {
   ];
 
   function applyRule(roman, arabic) {
-    const times = Math.floor(number / arabic);
+    var times = Math.floor(number / arabic);
     number -= arabic * times; 
-    return roman.repeat(times);
+    return repeat(roman, times);
+  }
+  
+  function repeat(string, times) {
+    var repeated = '';
+    for (var i = 0; i < times; ++i)
+        repeated += string;
+    return repeated;
   }
 
-  return RULES.map(rule => {
-    const roman = rule[0];
-    const arabic = rule[1];
+  return RULES.map(function(rule) {
+    var roman = rule[0];
+    var arabic = rule[1];
     return applyRule(roman, arabic)
   }).join('');
 }
-
-
