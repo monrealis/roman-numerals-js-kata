@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "Roman Numerals JavaScript Kata",
   "scripts": {
-    "test": "mocha",
+    "test": "qunit -c empty.js  -t test/*",
     "testing": "mocha --watch"
   },
   "author": "Vaidas Pilkauskas",
-  "dependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+  "devDependencies": {
+    "qunit": "^0.9.1"
   }
 }

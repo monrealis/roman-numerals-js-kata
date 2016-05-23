@@ -1,7 +1,8 @@
 'use strict'
-const expect = require('chai').expect;
+QUnit.module('Roman Numerals Converter');
 
-describe('Roman Numerals Converter', () => {
+test('Roman Numerals ss', () => {
+  expect(0);
   const tests = [
     [1, 'I'],
     [2, 'II'],
@@ -29,8 +30,8 @@ describe('Roman Numerals Converter', () => {
     const arabic = test[0];
     const roman = test[1];
 
-    it(`converts ${arabic} to ${roman}`, () => {
-      expect(toRoman(arabic)).to.equal(roman);
+    QUnit.test(`converts ${arabic} to ${roman}`, () => {
+      equal(toRoman(arabic), roman);
     });
  
 
